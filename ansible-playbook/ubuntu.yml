@@ -1,0 +1,4 @@
+- hosts: example
+  become: yes
+  roles:
+    - geth

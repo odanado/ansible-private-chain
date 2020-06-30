@@ -1,0 +1,16 @@
+- name: Add PPT
+  apt_repository:
+    repo: ppa:ethereum/ethereum
+    state: present
+
+- name: Install packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - ethereum
+
+- name: copy files
+  copy:
+    src: files/genesis.json
+    dest: /home/ubuntu
