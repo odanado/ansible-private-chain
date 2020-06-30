@@ -10,7 +10,13 @@
     packages:
       - ethereum
 
-- name: copy files
+- name: Copy genesis.json
   copy:
     src: files/genesis.json
     dest: /home/ubuntu
+
+
+- name: Copy geth.service
+  copy:
+    src: files/geth.service
+    dest: /etc/systemd/system
