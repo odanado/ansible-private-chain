@@ -20,3 +20,9 @@
   copy:
     src: files/geth.service
     dest: /etc/systemd/system
+
+- name: Start geth.service
+  systemd:
+    state: started
+    daemon_reload: yes
+    name: geth.service

@@ -1,5 +1,12 @@
-curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}' 13.231.191.233:8501 -H "Content-Type: application/json"
+# ansible-private-chain
 
-ansible-playbook -i ansible-playbook/local ansible-playbook/ubuntu.yml
+## Setup
+ansible-playbook -i ansible-playbook/ec2 ansible-playbook/ubuntu.yml
 
-systemctl status geth.service
+
+## Check
+curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}' -H "Content-Type: application/json" ${HOSTNAME}:8080/87b298c45ffd71385d0dda6a0a7cb43e151efbb2
+
+## TODO
+- [ ] update addresses
+- [ ] update nginx path
