@@ -3,29 +3,8 @@ Description=Ethereum go client
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/geth \
-    --verbosity 5 \
-    --datadir node0/ \
-    --syncmode 'full' \
-    --nat none \
-    --nodiscover \
-    --port 30310 \
-    --txpool.journal '' \
-    --rpc \
-    --rpcaddr '0.0.0.0' \
-    --rpcport 8501 \
-    --rpcvhosts '*' \
-    --rpcapi 'personal,db,eth,net,web3,txpool,miner,debug' \
-    --ws \
-    --wsaddr 0.0.0.0 \
-    --wsport 8546 \
-    --wsorigins '*' \
-    --wsapi 'personal,db,eth,net,web3,txpool,miner,debug' \
-    --networkid 50 \
-    --gasprice '2000000000' \
-    --targetgaslimit '0x4c4b400000' \
-    --mine \
-    --etherbase '0xe8816898d851d5b61b7f950627d04d794c07ca37'
+ExecStartPre=/etc/geth.service/init.sh
+ExecStart=/etc/geth.service/run.sh
 
 [Install]
 WantedBy=default.target

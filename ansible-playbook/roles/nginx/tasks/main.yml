@@ -15,3 +15,8 @@
     state: restarted
     daemon_reload: yes
     name: nginx
+
+- name: Test
+  template:
+    src: ./files/nginx.conf.j2
+    dest: /home/ubuntu/nginx.conf
