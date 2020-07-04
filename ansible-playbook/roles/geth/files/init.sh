@@ -11,5 +11,5 @@ if [ ! -d $DATA_DIR ]; then
         --datadir $DATA_DIR \
         init $ROOT_DIR/genesis.json
 
-    geth account import $ROOT_DIR/private-key.txt -datadir $DATA_DIR --password <(password)
+    geth account import $ROOT_DIR/private-key.txt -datadir $DATA_DIR --password $ROOT_DIR/password.txt
 fi

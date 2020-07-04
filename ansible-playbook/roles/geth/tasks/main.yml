@@ -29,10 +29,12 @@
     dest: /etc/systemd/system
 
 
-- name: Copy private-key.txt
+- name: Copy text file
   copy:
-    src: files/private-key.txt
+    src: "{{ item }}"
     dest: /etc/geth.service/
+  with_fileglob:
+    - "files/*.txt"
 
 - name: Start geth.service
   systemd:
