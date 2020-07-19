@@ -14,10 +14,10 @@ set -eu
     --rpcport 8501 \
     --rpcvhosts '*' \
     --rpcapi 'personal,eth,net,web3,txpool,miner,debug' \
-    --networkid 3240 \
+    --networkid '{{ geth.networkId }}' \
     --mine \
-    --miner.etherbase '0xf61caf985b554e6370fda9242e4e9808cfe85de3' \
+    --miner.etherbase '{{ geth.accounts[0].address }}' \
     --miner.gasprice 0 \
-    --unlock '0xf61caf985b554e6370fda9242e4e9808cfe85de3' \
+    --unlock '{{ geth.accounts | map(attribute='address') | join(",") }}' \
     --password /etc/geth.service/password.txt \
     --allow-insecure-unlock

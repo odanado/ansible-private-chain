@@ -1,5 +1,15 @@
 {
-    "nginx": {
-        "path": "87b298c45ffd71385d0dda6a0a7cb43e151efbb2"
-    }
+  "nginx": {
+    "path": "87b298c45ffd71385d0dda6a0a7cb43e151efbb2"
+  },
+  "geth": {
+    "accounts": [
+      {
+        "password": "password",
+        "privateKey": "4868DAEB318EB5640B934987E3941D4FC6D58EA2467584397AB39A2442296AE5",
+        "address": "f61caf985b554e6370fda9242e4e9808cfe85de3"
+      }
+    ],
+    "networkId": "3240"
+  }
 }

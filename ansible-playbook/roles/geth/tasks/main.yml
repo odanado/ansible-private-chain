@@ -11,12 +11,12 @@
       - ethereum
 
 - name: Copy genesis.json
-  copy:
+  template:
     src: files/genesis.json
     dest: /etc/geth.service/
 
 - name: Copy shell scripts
-  copy:
+  template:
     src: "{{ item }}"
     dest: /etc/geth.service/
     mode: "0744"
@@ -30,7 +30,7 @@
 
 
 - name: Copy text file
-  copy:
+  template:
     src: "{{ item }}"
     dest: /etc/geth.service/
   with_fileglob:
