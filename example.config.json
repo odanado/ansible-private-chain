@@ -1,3 +1,5 @@
 {
-    "path": "abc"
+    "nginx": {
+        "path": "87b298c45ffd71385d0dda6a0a7cb43e151efbb2"
+    }
 }

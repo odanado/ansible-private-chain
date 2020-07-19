@@ -6,17 +6,12 @@
       - nginx
 
 - name: Copy nginx.conf
-  copy:
-    src: files/nginx.conf
-    dest: /etc/nginx/conf.d/
+  template:
+    src: files/nginx.conf.j2
+    dest: /etc/nginx/conf.d/nginx.conf
 
 - name: Restart nginx
   systemd:
     state: restarted
     daemon_reload: yes
     name: nginx
-
-- name: Test
-  template:
-    src: ./files/nginx.conf.j2
-    dest: /home/ubuntu/nginx.conf
