@@ -2,7 +2,7 @@
 
 ## Setup
 ```bash
-$ ansible-playbook -i ansible-playbook/ec2 ansible-playbook/ubuntu.yml
+$ ansible-playbook -i ansible-playbook/ec2 ansible-playbook/ubuntu.yml --extra-vars "@example.config.json"
 ```
 
 
@@ -15,9 +15,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0xf61
 
 ## TODO
 - [ ] update inventory
-- [ ] update addresses
-- [ ] update nginx path
+- [x] update addresses
+- [x] update nginx path
 
 ## Memo
-public key: 0xf61CaF985B554e6370fDa9242e4E9808Cfe85de3
+address: 0xf61CaF985B554e6370fDa9242e4E9808Cfe85de3
 private key: 4868DAEB318EB5640B934987E3941D4FC6D58EA2467584397AB39A2442296AE5
